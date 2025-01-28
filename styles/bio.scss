@@ -1,0 +1,434 @@
+@use "./partials/variables" as *;
+@use "./partials/globals" as *;
+@use "./partials/mixins" as *;
+@use "./partials/typography" as *;
+@use "./partials/header";
+
+.header{
+  width:100%;
+  @include flex(row,center,center,nowrap);
+  @include tablet{
+    height:8vh;
+    @include desktop{
+      height:8vh;
+    }
+  }
+  &__nav{
+    background-color:$primary-color1;
+    width:100%;
+    @include tablet{
+      @include flex(row,space-between,center,wrap);
+    }
+    @include desktop{
+      @include flex(row,space-between,center,wrap);
+    }
+    &--container{
+      padding-left:16px;
+      padding-top:16px;
+      padding-bottom:8px;
+      @include flex(row,center,center,wrap);
+      @include tablet{
+        @include flex(row,flex-start,center,wrap);
+        margin-left:48px;
+        padding:0
+      }
+      @include desktop{
+      }
+    }
+    &--logo{
+      padding:0;
+      @include tablet{
+        padding-left:16px;
+      }
+      @include desktop{
+      }
+    }
+  }
+  &__menu{
+    @include flex(row,center,center,wrap);
+    color:$primary-color3;
+    text-align: center;
+    @include tablet{
+      @include flex(row,space-around,center,wrap);
+      width:30%;
+      margin-left:-40%;
+    }
+    @include desktop{
+      width:25%;
+    }
+    &--link{
+      padding-bottom: 10px;
+      @include mobile-pageheader;
+      font-size:18px;
+      @include tablet{
+        @include desktop-subheader;
+        padding-bottom:3px;
+        font-size:18px;
+
+      }
+      @include desktop{
+        @include desktop-subheader;
+        font-size:18px;
+      }
+    }
+  }
+}
+.link__highlight--container{
+  border-bottom:3px solid $primary-color3;
+  margin:0;
+  width:50%;
+  @include tablet{
+    height:8vh;
+    @include flex(row,center,center,nowrap)
+  }
+
+}
+.link__text{
+  color:$secondary-color2;
+}
+.link__text:hover{
+ color:$secondary-color3;
+}
+
+.link__text:active{
+  color:$primary-color3;
+  font-weight:900;
+}
+
+
+.banner{
+  background-image: url(../assets/Images/hero-bio.jpg);
+@include background-style;
+@include size(43vh,100%);
+color:$primary-color3;
+@include tablet{
+@include size(50vh,100%);
+}
+@include desktop{
+@include size(60vh,100%);
+}
+&__image{
+  @include flex(column,center,center,wrap);
+  background-color: rgba(50, 50, 50,0.5);
+  width:100%;
+  height:43vh;
+  @include tablet{
+  @include size(50vh,100%)
+  }
+  @include desktop{
+    @include size(60vh,100%)
+  }
+   &--title{
+   margin:0;
+   opacity: 1;
+   color:white;
+   fill:white;
+   height:148px;
+   width:90%;
+   padding-left:16px;
+   padding-top:54px;
+   @include mobile-pageheader;
+   @include tablet{
+    @include desktop-pageheader;
+   }
+   @include desktop{
+    @include desktop-pageheader;
+   }
+  }
+}
+}
+.hero{
+  width:100%;
+  @include tablet{
+    padding-left:36px;
+    padding-right:36px;
+  }
+  @include desktop{
+    max-width: 1300px;
+  }
+  &__title{
+    padding: 16px;
+    width:100%;
+    @include mobile-pageheader;
+    @include tablet{
+      padding-top:48px;
+      padding-bottom:24px;
+      @include desktop-sectionheader;
+    }
+    @include desktop{
+      @include desktop-sectionheader;
+    }
+  }
+  &__image{
+    width:100%;
+    object-fit: cover;
+    padding: 16px;
+    display: inline-block;
+    margin:auto;
+    @include desktop{
+    }
+    
+  }
+  &__subtitle{
+    padding-top:20px;
+    width:100%;
+    margin:2%;
+    @include mobile-pageheader;
+    @include tablet{
+      padding-top:16px;
+      @include desktop-subheader;
+    }
+    @include desktop{
+      max-width: 1000px;
+    }
+    }
+  &__subtitle2{
+    padding-top:16px;
+    padding-bottom:16px;
+    padding-left:16px;
+    padding-right:16px;
+    width:100%;
+    @include mobile-subheader;
+    @include tablet{
+      padding-top:6px;
+      padding-bottom:12px;
+    }
+    @include desktop{
+    }
+  }
+  &__subtitle3{
+    padding-top:24px;
+    width:100%;
+    padding-left:16px;
+    padding-right:16px;
+    @include mobile-sectionheader;
+    @include tablet{
+      padding-top:24px;
+      padding-right: 36px;
+      padding-left: 12px;
+    }
+    @include desktop{
+    }
+  }
+  &__content{
+    padding-top: 12px;
+    @include tablet{
+      padding-top:6px;
+      @include flex(row,space-between,center,nowrap);
+      gap:10px;
+    }
+    @include desktop{
+    }
+    &--text{
+      padding: 16px;
+      width:90%;
+      @include mobile-bodycopy;
+      @include tablet{
+        @include desktop-bodycopy;
+        @include desktop{
+        }
+      }
+    }
+    &--text2{
+      padding: 16px;
+      width:90%;
+      @include mobile-bodycopy;
+      @include tablet{
+        @include desktop-bodycopy;
+        @include desktop{
+        }
+      }
+    }
+  }
+}
+.content{
+  background-color: $secondary-color3;
+  width:100%;
+  @include desktop{
+    max-width: 1300px;
+  }
+  &__title{
+    padding-top:24px;
+    padding-bottom:16px;
+    padding-left:16px;
+    padding-right:16px;
+    @include mobile-pageheader;
+    @include tablet{
+      @include desktop-subheader;
+      padding-left:48px;
+      padding-top:48px;
+    }
+    @include desktop{
+      @include desktop-subheader;
+    }
+  }
+  &__image{
+    @include flex(column,center,center,wrap);
+    width:100%;
+    padding-bottom:16px;
+    padding-top:16px;
+    @include tablet{
+      @include flex(row, center, center, wrap);
+      width: 100%;
+    }
+    @include desktop{ 
+    }
+
+    &--item{
+      @include flex(row, center, center, wrap);
+      width:90%;
+      padding-bottom:16px;
+      filter:grayscale(100%);
+      transition:filter 0.3s ease;
+      @include tablet{
+        width: 30%;
+      }
+      @include desktop{
+      }
+    }
+
+  }
+}
+.content__image--item:hover{
+  filter:grayscale(0%);
+
+}
+//footer
+.footer{
+  position: relative;
+  background-color: $primary-color1;
+  color:$primary-color3;
+  width:100%;
+  padding-top:24px;
+  @include desktop{
+    max-width: 1300px;
+  }
+&__title{
+  padding-top:24px;
+  padding-bottom:16px;
+  padding-left:16px; 
+  @include mobile-pageheader;
+  position: relative;
+  @include tablet{
+    @include desktop-sectionheader;
+    display: inline-block;
+    padding-left:48px;
+    @include desktop{
+      max-width: 800px;
+    }
+  }
+}
+&__icon{
+  @include flex(row,center,center,nowrap);
+  width:42%;
+  height:6vh;
+  margin-left:16px;
+  @include tablet{
+    height:7vh;
+    width:30%;
+    margin-left:0;
+    display: inline-block;
+    margin-left:5%;
+    @include desktop{
+      max-width: 800px;
+      height:6vh;
+    }
+  }
+  &--item{
+    height:25px
+  }
+}
+&__text{
+ padding-left:16px;
+  @include mobile-bodycopy;
+  @include tablet{
+    @include flex(row,space-between,center,nowrap);
+    width:100%;
+    @include desktop{
+      width:70%;
+      margin-left:16px;
+      max-width: 800px;
+      padding-left:0;
+    }
+  }
+  &--title{
+    @include mobile-subheader;
+    padding-top:16px;
+    padding-bottom:16px;
+    @include tablet{
+      @include desktop-bodycopy;
+      font-weight:700;
+      @include desktop{
+        @include desktop-bodycopy;
+        max-width: 800px;
+    }
+  }
+}
+&--content{
+  @include mobile-bodycopy;
+  @include tablet{
+    @include desktop-bodycopy;
+  @include desktop{
+    max-width: 800px;
+  }
+  }
+}
+&--content2{
+  padding-top:0px;
+  padding-bottom:16px;
+}
+&--content3{
+  color:$primary-color3;
+}
+}
+&__logo{
+  padding-top:48px;
+  padding-bottom:16px;
+  padding-left:16px;
+  @include tablet{
+    position: absolute;
+    left:80%;
+    top:6%;
+    display: inline-block;
+    @include desktop{
+    }
+  }
+&--text{
+  padding-bottom:16px;
+  padding-left:16px;
+  margin:0;
+  @include mobile-bodycopy;
+  @include tablet{
+    @include desktop-footercopy;
+    padding-top:24px;
+    margin-left:40px;
+  }
+  @include desktop{
+    @include desktop-footercopy;
+    margin-left:48px;
+    padding-top:48px;
+    max-width: 800px;
+    padding-left:0;
+  }
+}
+}
+
+.footer__icon--highlight{
+  @include tablet{
+    margin-left:15%;
+    margin-right:10%;
+  }
+}
+.footer__text--container1{
+  @include tablet{
+  margin-left:5%;
+}
+}
+}
+.footer__bgcontainer{
+  @include desktop{
+  background-color: $primary-color1;
+  width:100%;
+  padding-top:24px;
+}
+}

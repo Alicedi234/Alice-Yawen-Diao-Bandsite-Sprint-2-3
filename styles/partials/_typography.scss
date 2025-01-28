@@ -1,0 +1,95 @@
+@font-face{
+  font-family:"NunitoSans";
+  src:url("../../assets/Font/Alternative\ files/NunitoSans-Bold.woff2") format("woff2");
+  font-weight:700;
+  font-style: bold;
+}
+
+@font-face{
+font-family:"NunitoSans";
+src:url("../../assets/Font/Alternative\ files/NunitoSans-Medium.woff2") format("woff2");
+font-weight:500;
+font-style: medium; 
+}
+
+@font-face{
+  font-family:"NunitoSans";
+  src:url(../../assets/Font/Alternative\ files/NunitoSans-Regular.woff2) format("woff2");
+  font-weight:400;
+  font-style:normal;
+}
+
+@mixin mobile-pageheader{
+  font-family: "NunitoSans";
+  font-size:24px;
+  line-height:32px;
+  font-weight:700;
+}
+
+@mixin mobile-sectionheader{
+  font-family: "NunitoSans";
+  font-size:24px;
+  line-height:32px;
+  font-weight:700;
+}
+
+@mixin mobile-subheader{
+  font-family: "NunitoSans";
+  font-size:14px;
+  line-height:22px;
+  font-weight:600;
+}
+@mixin mobile-bodycopy{
+  font-family: "NunitoSans";
+  font-size:13px;
+  line-height:18px;
+  font-weight:400;
+}
+@mixin mobile-footercopy{
+  font-family: "NunitoSans";
+  font-size:13px;
+  line-height:18px;
+  font-weight:400;
+}
+@mixin mobile-labelsbuttons{
+  font-family: "NunitoSans";
+  font-size:10px;
+  line-height:20px;
+  font-weight:700;
+}
+@mixin desktop-pageheader{
+  font-family: "NunitoSans";
+  font-size:60px;
+  line-height:68px;
+  font-weight:700;
+}
+@mixin desktop-sectionheader{
+  font-family: "NunitoSans";
+  font-size:36px;
+  line-height:44px;
+  font-weight:700;
+}
+@mixin desktop-subheader{
+  font-family: "NunitoSans";
+  font-size:24px;
+  line-height:32px;
+  font-weight:500;
+}
+@mixin desktop-bodycopy{
+  font-family: "NunitoSans";
+  font-size:14px;
+  line-height:22px;
+  font-weight:500;
+}
+@mixin desktop-footercopy{
+  font-family: "NunitoSans";
+  font-size:14px;
+  line-height:20px;
+  font-weight:400;
+}
+@mixin desktop-labelbotton{
+  font-family: "NunitoSans";
+  font-size:12px;
+  line-height:20px;
+  font-weight:700;
+}
