@@ -293,6 +293,77 @@ color:$primary-color3;
   filter:grayscale(0%);
 
 }
+//form
+
+
+.main{
+  width:100%;
+  &__container1{
+    @include flex(row,center,center,nowrap);
+  }
+  &__image{
+    margin-top:-240px;
+    margin-left:16px;
+    &--item{
+      border-radius: 50%;
+width:60px;
+height:60px;
+    }
+  }
+  &__title{
+    margin-top: 24px;
+    padding-left: 16px;
+    padding-right: 16px;
+    @include mobile-pageheader;
+  }
+  &__form{
+    display:flex;
+    flex-direction: column;
+    width:100%;
+    &--label{
+      margin-left:5%;
+      margin-bottom:16px;
+      margin-top:32px;
+      
+    }
+  }
+  &__button{
+    width:85%;
+    margin-left:5%;
+    margin-top:16px;
+    margin-bottom:16px;
+    height:7vh;
+    @include mobile-pageheader;
+    color:$primary-color3;
+    background-color: $primary-color1;;
+  }
+  }
+  
+
+
+#name,#comment{
+  margin-left:5%;
+  width:85%;
+}
+#name{
+  height:6vh;
+}
+#comment{
+  height:20vh;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 //footer
 .footer{
   position: relative;
