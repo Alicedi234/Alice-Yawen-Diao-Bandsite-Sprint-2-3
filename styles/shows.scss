@@ -137,237 +137,69 @@ color:$primary-color3;
   }
 }
 }
-.hero{
+
+//shows
+.shows{
   width:100%;
-  @include tablet{
-    padding-left:36px;
-    padding-right:36px;
-  }
-  @include desktop{
-    max-width: 1300px;
-  }
+  padding:16px;
   &__title{
-    padding: 16px;
-    width:100%;
     @include mobile-pageheader;
-    @include tablet{
-      padding-top:48px;
-      padding-bottom:24px;
-      @include desktop-sectionheader;
-    }
-    @include desktop{
-      @include desktop-sectionheader;
-    }
+    font-size:40px;
+    color:$primary-color1;
+    padding-top:48px;
+    padding-bottom:24px;
   }
-  &__image{
+  &__container{
     width:100%;
-    object-fit: cover;
-    padding: 16px;
-    display: inline-block;
-    margin:auto;
-    @include desktop{
-    }
-    
   }
-  &__subtitle{
-    padding-top:20px;
-    width:100%;
-    margin:2%;
-    @include mobile-pageheader;
-    @include tablet{
-      padding-top:16px;
-      @include desktop-subheader;
-    }
-    @include desktop{
-      max-width: 1000px;
-    }
-    }
-  &__subtitle2{
-    padding-top:16px;
-    padding-bottom:16px;
-    padding-left:16px;
-    padding-right:16px;
-    width:100%;
-    @include mobile-subheader;
-    @include tablet{
-      padding-top:6px;
-      padding-bottom:12px;
-    }
-    @include desktop{
-    }
+  &__date-container{
+    @include mobile-bodycopy;
+    color: $primary-color2;
+    padding:16px 0;
   }
-  &__subtitle3{
-    padding-top:24px;
-    width:100%;
-    padding-left:16px;
-    padding-right:16px;
+  &__date{
     @include mobile-sectionheader;
-    @include tablet{
-      padding-top:24px;
-      padding-right: 36px;
-      padding-left: 12px;
-    }
-    @include desktop{
-    }
+    color:$primary-color1;
   }
-  &__content{
-    padding-top: 12px;
-    @include tablet{
-      padding-top:6px;
-      @include flex(row,space-between,center,nowrap);
-      gap:10px;
-    }
-    @include desktop{
-    }
-    &--text{
-      padding: 16px;
-      width:90%;
-      @include mobile-bodycopy;
-      @include tablet{
-        @include desktop-bodycopy;
-        @include desktop{
-        }
-      }
-    }
-    &--text2{
-      padding: 16px;
-      width:90%;
-      @include mobile-bodycopy;
-      @include tablet{
-        @include desktop-bodycopy;
-        @include desktop{
-        }
-      }
-    }
+  &__venue-container{
+    @include mobile-bodycopy;
+    color: $primary-color2;
+    padding:16px 0;
   }
-}
-.content{
-  background-color: $secondary-color3;
-  width:100%;
-  @include desktop{
-    max-width: 1300px;
+  &__venue{
+    @include mobile-sectionheader;
+    font-weight:400;
+    color:$primary-color1;
   }
-  &__title{
-    padding-top:24px;
-    padding-bottom:16px;
-    padding-left:16px;
-    padding-right:16px;
-    @include mobile-pageheader;
-    @include tablet{
-      @include desktop-subheader;
-      padding-left:48px;
-      padding-top:48px;
-    }
-    @include desktop{
-      @include desktop-subheader;
-    }
+  &__location-container{
+    @include mobile-bodycopy;
+    color: $primary-color2;
+    padding:16px 0;
   }
-  &__image{
-    @include flex(column,center,center,wrap);
-    width:100%;
-    padding-bottom:16px;
-    padding-top:16px;
-    @include tablet{
-      @include flex(row, center, center, wrap);
-      width: 100%;
-    }
-    @include desktop{ 
-    }
-
-    &--item{
-      @include flex(row, center, center, wrap);
-      width:90%;
-      padding-bottom:16px;
-      filter:grayscale(100%);
-      transition:filter 0.3s ease;
-      @include tablet{
-        width: 30%;
-      }
-      @include desktop{
-      }
-    }
-
-  }
-}
-.content__image--item:hover{
-  filter:grayscale(0%);
-
-}
-//form
-
-
-.main{
-  width:100%;
-  &__container1{
-    @include flex(row,center,center,nowrap);
-  }
-  &__image{
-    margin-top:-240px;
-    margin-left:16px;
-    &--item{
-      border-radius: 50%;
-width:60px;
-height:60px;
-    }
-  }
-  &__title{
-    margin-top: 24px;
-    padding-left: 16px;
-    padding-right: 16px;
-    @include mobile-pageheader;
-  }
-  &__form{
-    display:flex;
-    flex-direction: column;
-    width:100%;
-    &--label{
-      margin-left:5%;
-      margin-bottom:16px;
-      margin-top:32px;
-      
-    }
+  &__location{
+    @include mobile-sectionheader;
+    font-weight:400;
+    color:$primary-color1;
   }
   &__button{
-    width:85%;
-    margin-left:5%;
-    margin-top:16px;
-    margin-bottom:16px;
-    height:7vh;
-    @include mobile-pageheader;
-    color:$primary-color3;
-    background-color: $primary-color1;;
+    width:100%;
+    background-color: $primary-color1;
+    @include mobile-sectionheader;
+    color: $primary-color3;
+    text-align:center;
+    padding:16px;
+    margin: 24px 0;
+    border-radius: 10px;
   }
-  &__avatar{
-    width:60px;
-    height:60px;
-    border-radius: 50%;
-    background-color: $secondary-color2;;
-  }
-  }
-  
+} 
 
-
-#name,#comment{
-  margin-left:5%;
-  width:85%;
-}
-#name{
-  height:6vh;
-}
-#comment{
-  height:20vh;
+.shows__container--hover:hover{
+  background-color: $secondary-color3;
 }
 
-
-
-
-
-
-
-
-
-
-
+.shows__container--selected:active{
+  background-color: $secondary-color2;
+}
 
 
 //footer

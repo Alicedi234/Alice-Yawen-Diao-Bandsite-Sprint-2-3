@@ -32,8 +32,8 @@ function displayComments(comments){
     const cardEl = document.createElement("article");
     cardEl.classList.add("main__card")
     
-    const image = document.createElement('img');
-    image.src = "./assets/Images/Mohan-muruge.jpg";
+    const pic = document.createElement('div');
+    pic.classList.add("main__avatar")
     
     const cardContainer = document.createElement("div");
     
@@ -45,7 +45,7 @@ function displayComments(comments){
     const date = document.createElement('p');
     date.textContent = comments[i].date;
     
-    cardEl.appendChild(image);//image url
+    cardEl.appendChild(pic);//image url
     cardEl.appendChild(cardContainer);
     cardEl.appendChild(date);//date
     cardContainer.appendChild(heading);//name
