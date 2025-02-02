@@ -304,17 +304,38 @@ color:$primary-color3;
     margin-top:24px;
     padding-left: 16px;
     padding-right: 16px;
+    @include tablet{
+      @include desktop-sectionheader;
+      margin-top:32px;
+      padding-left: 48px;
+      padding-right: 48px;
+      @include desktop{
+        max-width: 1300px;
+      }
+    }
   }
   &__container1{
     @include flex(row,center,center,nowrap);
+    position:relative;
+    @include tablet{
+      width:80%;
+      @include desktop{
+        max-width: 800px;
+      }
+    }
   }
   &__image{
-    margin-top:-189px;
     margin-left:16px;
+    position:relative;
+    top:-6rem;
     &--item{
       border-radius: 50%;
       width:42px;
-      height:42px;
+      height:38px;
+      @include tablet{
+        width:52px;
+        height:48px;
+      }
     }
   }
   &__form{
@@ -327,8 +348,12 @@ color:$primary-color3;
       margin-top:16px;
       @include mobile-subheader;
       color:$primary-color2;
+      @include tablet{
+        @include desktop-bodycopy;
+      }
     }
   }
+  
   &__button{
     width:90%;
     margin-left:3%;
@@ -339,6 +364,15 @@ color:$primary-color3;
     color:$primary-color3;
     background-color: $primary-color1;
     border-radius: 5px;
+    @include tablet{
+      width:30%;
+      margin: 0 auto;
+      margin-right:7%;
+      margin-top:24px;
+      margin-bottom:16px;
+      height:6vh;
+      @include desktop-bodycopy;
+    }
   }
   &__card{
     width:100%;
@@ -351,29 +385,45 @@ color:$primary-color3;
       @include mobile-subheader;
       padding-bottom:8px;
       font-size: 16px;
+      @include tablet{
+        @include desktop-bodycopy;
+        font-size: 18px;
+      }
   }
   &--text{
     @include mobile-bodycopy;
+    @include tablet{
+      @include desktop-bodycopy;
+      font-weight:400;
+    }
   }
 }
   &__divider{
     height:1px;
     color:$secondary-color2;
-    width:100%;
+    width:95%;
     margin-top:16px;
     margin-bottom:16px;
     padding:0;
     margin-left:16px;
     margin-right:16px;
-
+    @include tablet{
+      margin-top:32px;
+      margin-bottom:32px;  
+    }
   }
   &__date{
     position:absolute;
     top:5%;
-    left:80%;
+    left:75%;
     @include mobile-subheader;
     font-weight:100;
     color:$primary-color2;
+    @include tablet{
+      @include desktop-bodycopy;
+      top:3%;
+      left:83%;
+    }
   }
 
   &__container3{
@@ -384,14 +434,20 @@ color:$primary-color3;
     margin-right:4%
   }
   &__avatar{
-    width:44px;
-    height:44px;
+    width:42px;
+    height:38px;
     border-radius: 50%;
     background-color: $secondary-color2;
-    margin-top:-42px;
     margin-left:16px;
+    position:relative;
+    @include tablet{
+      width:52px;
+      height:48px;
+      top:-20px;
+    }
   }
-  }
+}
+
   
 
 input::placeholder{
@@ -401,7 +457,15 @@ input::placeholder{
  text-align: left;
 }
 
-
+#comments-list{
+  @include tablet{
+    width:80%;
+    margin: 0 auto;
+    @include desktop{
+      max-width: 800px;
+    }
+  }
+}
 
 #name,#comment{
   margin-left:3%;
