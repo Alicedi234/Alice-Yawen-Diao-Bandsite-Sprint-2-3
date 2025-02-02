@@ -40,6 +40,9 @@ function displayShows(showsdata){
     showsEl.classList.add("shows__container--hover");
     showsEl.classList.add("shows__container--selected");
     
+    const dateBox = document.createElement("div");
+    dateBox.classList.add("shows__date-box");
+
     const dateContainer = document.createElement("h3");
     dateContainer.textContent = "DATE";
     dateContainer.classList.add("shows__date-container");
@@ -48,6 +51,9 @@ function displayShows(showsdata){
     date.textContent = showsdata[i].date;
     date.classList.add("shows__date");
     
+    const venueBox = document.createElement("div");
+    venueBox.classList.add("shows__venue-box");
+
     const venueContainer = document.createElement("h3");
     venueContainer.textContent = "VENUE";
     venueContainer.classList.add("shows__venue-container");
@@ -56,7 +62,9 @@ function displayShows(showsdata){
     venue.textContent = showsdata[i].venue;
     venue.classList.add("shows__venue");
     
-    
+    const locationBox = document.createElement("div");
+    locationBox.classList.add("shows__location-box");
+
     const locationContainer = document.createElement("h3");
     locationContainer.textContent = "LOCATION";
     locationContainer.classList.add("shows__location-container");
@@ -72,12 +80,18 @@ function displayShows(showsdata){
     const dividerEl = document.createElement("hr");
     dividerEl.classList.add("shows__divider");
     
-    showsEl.appendChild(dateContainer);
-    showsEl.appendChild(date);
-    showsEl.appendChild(venueContainer);
-    showsEl.appendChild(venue);
-    showsEl.appendChild(locationContainer);
-    showsEl.appendChild(location);
+    dateBox.appendChild(dateContainer);
+    dateBox.appendChild(date);
+    
+    venueBox.appendChild(venueContainer);
+    venueBox.appendChild(venue);
+
+    locationBox.appendChild(locationContainer);
+    locationBox.appendChild(location);
+
+    showsEl.appendChild(dateBox);
+    showsEl.appendChild(venueBox);
+    showsEl.appendChild(locationBox);
     showsEl.appendChild(buttonEl);
     showsEl.appendChild(dividerEl);
     

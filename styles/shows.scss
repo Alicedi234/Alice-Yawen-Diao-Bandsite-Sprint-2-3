@@ -8,18 +8,20 @@
   width:100%;
   @include flex(row,center,center,nowrap);
   @include tablet{
-    height:8vh;
+    height:13vh;
     @include desktop{
-      height:8vh;
+      height:13vh;
     }
   }
   &__nav{
     background-color:$primary-color1;
     width:100%;
     @include tablet{
+      height:13vh;
       @include flex(row,space-between,center,wrap);
     }
     @include desktop{
+      height:13vh;
       @include flex(row,space-between,center,wrap);
     }
     &--container{
@@ -30,9 +32,11 @@
       @include tablet{
         @include flex(row,flex-start,center,wrap);
         margin-left:48px;
-        padding:0
+        padding:0;
+        height:13vh;
       }
       @include desktop{
+        height:13vh;
       }
     }
     &--logo{
@@ -52,9 +56,11 @@
       @include flex(row,space-around,center,wrap);
       width:30%;
       margin-left:-40%;
+      height:13vh;
     }
     @include desktop{
       width:25%;
+      height:13vh;
     }
     &--link{
       padding-bottom: 10px;
@@ -78,7 +84,7 @@
   margin:0;
   width:50%;
   @include tablet{
-    height:8vh;
+    height:13vh;
     @include flex(row,center,center,nowrap)
   }
 
@@ -99,30 +105,32 @@
 .banner{
 background-image: url(../assets/Images/hero-shows.jpg);
 @include background-style;
-@include size(35vh,100%);
+width:100%;
 color:$primary-color3;
-@include tablet{
-@include size(50vh,100%);
-}
-@include desktop{
-@include size(60vh,100%);
-}
 &__content{
   @include flex(column,flex-start,flex-start,wrap);
   background-color: rgba(50, 50, 50,0.5);
   width:100%;
-  height:35vh;
-  @include tablet{
-  @include size(50vh,100%)
-  }
   @include desktop{
-    @include size(60vh,100%)
+    height:50vh;
+    position: relative;
   }
   &--title1{
     margin:0;
+    padding-top:16px;
     padding-left:16px;
     @include mobile-pageheader;
-    margin-top:-56px;
+    @include tablet{
+      @include desktop-pageheader;
+      padding-left:64px;
+      padding-top:24px;
+      font-size:48px;
+    }
+    @include desktop{
+      max-width: 800px;
+      padding-left:128px;
+      padding-top:32px;
+    }
 
   }
    &--title2{
@@ -130,70 +138,140 @@ color:$primary-color3;
    opacity: 1;
    color:white;
    fill:white;
-   height:148px;
    width:90%;
+   padding-top:24px;
    padding-left:16px;
-   padding-top:54px;
    @include mobile-subheader;
    @include tablet{
-    @include desktop-pageheader;
+    @include desktop-subheader;
+    padding-left:64px;
+    padding-top:48px;
    }
-   @include desktop{
-    @include desktop-pageheader;
-   }
+    @include desktop{
+      max-width: 800px;
+      padding-left:128px;
+      padding-top:128px;
+    }
   }
   &--soundcloud{
     width:100%;
     text-align:center;
     margin-top:16px;
+    padding-bottom:16px;
+    @include tablet{
+      width:60%;
+      margin-top:24px;
+      padding-bottom:24px;
+      text-align:left;
+      margin-left:80px;
+      @include desktop{
+        width:40%;
+        position: absolute;
+        top:25%;
+        right:15%;
+      }
+    }
 }
 }
+}
+.banner__content--soundcloud-iframe{
+  @include tablet{
+    height:180px;
+  }
 }
 //shows
 .shows{
   width:100%;
   padding:16px;
+  @include tablet{
+    padding:48px;
+    width:90%;
+  }
   &__title{
     @include mobile-pageheader;
-    font-size:40px;
+    font-size:32px;
     color:$primary-color1;
-    padding-top:48px;
+    padding-top:24px;
     padding-bottom:24px;
+    @include tablet{
+      @include desktop-pageheader;
+      padding-left:48px;
+      @include desktop{
+        padding-left:64px;
+      }
+    }
   }
   &__container{
     width:100%;
+    text-align:left;
+    @include tablet{
+      @include flex(row,space-between,center,wrap);
+    }
+    @include desktop{
+      width:70%;
+      margin-right:5%;
+      max-width: 1000px;
+    }
+    
   }
   &__date-container{
     @include mobile-subheader;
     color: $primary-color2;
     padding:16px 0;
+    @include tablet{
+      @include desktop-bodycopy;
+      font-size:16px;
+    }
   }
   &__date{
-    @include mobile-sectionheader;
+    @include mobile-subheader;
     color:$primary-color1;
     margin-top:-10px;
+    font-size:18px;
+    @include tablet{
+      @include desktop-bodycopy;
+      font-size:16px;
+    }
   }
   &__venue-container{
     @include mobile-subheader;
     color: $primary-color2;
     padding:16px 0;
+    @include tablet{
+      @include desktop-bodycopy;
+      font-size:16px;
+    }
   }
   &__venue{
-    @include mobile-sectionheader;
+    @include mobile-subheader;
     font-weight:400;
     color:$primary-color1;
     margin-top:-10px;
+    font-size:18px;
+    @include tablet{
+      @include desktop-bodycopy;
+      font-size:16px;
+    }
   }
   &__location-container{
     @include mobile-subheader;
     color: $primary-color2;
     padding:16px 0;
+    @include tablet{
+      @include desktop-bodycopy;
+      font-size:16px;
+    }
   }
   &__location{
-    @include mobile-sectionheader;
+    @include mobile-subheader;
     font-weight:400;
     color:$primary-color1;
     margin-top:-10px;
+    font-size:18px;
+    @include tablet{
+      @include desktop-bodycopy;
+      font-size:16px;
+    }
   }
   &__button{
     width:100%;
@@ -201,15 +279,19 @@ color:$primary-color3;
     @include mobile-sectionheader;
     color: $primary-color3;
     text-align:center;
-    padding:16px;
+    padding:4px;
     margin: 24px 0;
     border-radius: 10px;
+    font-size:18px;
+    @include tablet{
+      width:20%;
+    }
   }
   &__divider{
     height:1px;
     color:$secondary-color2;
     width:120%;
-    margin-top:6px;
+    margin-top:4px;
     margin-bottom:6px;
     padding:0;
   }
@@ -253,7 +335,7 @@ color:$primary-color3;
   @include flex(row,center,center,nowrap);
   width:42%;
   height:6vh;
-  margin-left:16px;
+  margin-left:8px;
   @include tablet{
     height:7vh;
     width:30%;

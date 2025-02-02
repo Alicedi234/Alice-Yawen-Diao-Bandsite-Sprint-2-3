@@ -41,12 +41,12 @@ ul {
 }
 @media screen and (min-width: 768px) {
   .header {
-    height: 8vh;
+    height: 13vh;
   }
 }
 @media screen and (min-width: 768px) and (min-width: 1280px) {
   .header {
-    height: 8vh;
+    height: 13vh;
   }
 }
 .header__nav {
@@ -55,6 +55,7 @@ ul {
 }
 @media screen and (min-width: 768px) {
   .header__nav {
+    height: 13vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -64,6 +65,7 @@ ul {
 }
 @media screen and (min-width: 1280px) {
   .header__nav {
+    height: 13vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -90,6 +92,12 @@ ul {
     flex-wrap: wrap;
     margin-left: 48px;
     padding: 0;
+    height: 13vh;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .header__nav--container {
+    height: 13vh;
   }
 }
 .header__nav--logo {
@@ -118,11 +126,13 @@ ul {
     flex-wrap: wrap;
     width: 30%;
     margin-left: -40%;
+    height: 13vh;
   }
 }
 @media screen and (min-width: 1280px) {
   .header__menu {
     width: 25%;
+    height: 13vh;
   }
 }
 .header__menu--link {
@@ -160,7 +170,7 @@ ul {
 }
 @media screen and (min-width: 768px) {
   .link__highlight--container {
-    height: 8vh;
+    height: 13vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -186,21 +196,8 @@ ul {
   background-image: url(../assets/Images/hero-shows.jpg);
   background-position: center;
   background-size: cover;
-  height: 35vh;
   width: 100%;
   color: #FFFFFF;
-}
-@media screen and (min-width: 768px) {
-  .banner {
-    height: 50vh;
-    width: 100%;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .banner {
-    height: 60vh;
-    width: 100%;
-  }
 }
 .banner__content {
   display: flex;
@@ -210,38 +207,48 @@ ul {
   flex-wrap: wrap;
   background-color: rgba(50, 50, 50, 0.5);
   width: 100%;
-  height: 35vh;
-}
-@media screen and (min-width: 768px) {
-  .banner__content {
-    height: 50vh;
-    width: 100%;
-  }
 }
 @media screen and (min-width: 1280px) {
   .banner__content {
-    height: 60vh;
-    width: 100%;
+    height: 50vh;
+    position: relative;
   }
 }
 .banner__content--title1 {
   margin: 0;
+  padding-top: 16px;
   padding-left: 16px;
   font-family: "NunitoSans";
   font-size: 24px;
   line-height: 32px;
   font-weight: 700;
-  margin-top: -56px;
+}
+@media screen and (min-width: 768px) {
+  .banner__content--title1 {
+    font-family: "NunitoSans";
+    font-size: 60px;
+    line-height: 68px;
+    font-weight: 700;
+    padding-left: 64px;
+    padding-top: 24px;
+    font-size: 48px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .banner__content--title1 {
+    max-width: 800px;
+    padding-left: 128px;
+    padding-top: 32px;
+  }
 }
 .banner__content--title2 {
   margin: 0;
   opacity: 1;
   color: white;
   fill: white;
-  height: 148px;
   width: 90%;
+  padding-top: 24px;
   padding-left: 16px;
-  padding-top: 54px;
   font-family: "NunitoSans";
   font-size: 14px;
   line-height: 22px;
@@ -250,41 +257,103 @@ ul {
 @media screen and (min-width: 768px) {
   .banner__content--title2 {
     font-family: "NunitoSans";
-    font-size: 60px;
-    line-height: 68px;
-    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 500;
+    padding-left: 64px;
+    padding-top: 48px;
   }
 }
 @media screen and (min-width: 1280px) {
   .banner__content--title2 {
-    font-family: "NunitoSans";
-    font-size: 60px;
-    line-height: 68px;
-    font-weight: 700;
+    max-width: 800px;
+    padding-left: 128px;
+    padding-top: 128px;
   }
 }
 .banner__content--soundcloud {
   width: 100%;
   text-align: center;
   margin-top: 16px;
+  padding-bottom: 16px;
+}
+@media screen and (min-width: 768px) {
+  .banner__content--soundcloud {
+    width: 60%;
+    margin-top: 24px;
+    padding-bottom: 24px;
+    text-align: left;
+    margin-left: 80px;
+  }
+}
+@media screen and (min-width: 768px) and (min-width: 1280px) {
+  .banner__content--soundcloud {
+    width: 40%;
+    position: absolute;
+    top: 25%;
+    right: 15%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .banner__content--soundcloud-iframe {
+    height: 180px;
+  }
 }
 
 .shows {
   width: 100%;
   padding: 16px;
 }
+@media screen and (min-width: 768px) {
+  .shows {
+    padding: 48px;
+    width: 90%;
+  }
+}
 .shows__title {
   font-family: "NunitoSans";
   font-size: 24px;
   line-height: 32px;
   font-weight: 700;
-  font-size: 40px;
+  font-size: 32px;
   color: #323232;
-  padding-top: 48px;
+  padding-top: 24px;
   padding-bottom: 24px;
+}
+@media screen and (min-width: 768px) {
+  .shows__title {
+    font-family: "NunitoSans";
+    font-size: 60px;
+    line-height: 68px;
+    font-weight: 700;
+    padding-left: 48px;
+  }
+}
+@media screen and (min-width: 768px) and (min-width: 1280px) {
+  .shows__title {
+    padding-left: 64px;
+  }
 }
 .shows__container {
   width: 100%;
+  text-align: left;
+}
+@media screen and (min-width: 768px) {
+  .shows__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows__container {
+    width: 70%;
+    margin-right: 5%;
+    max-width: 1000px;
+  }
 }
 .shows__date-container {
   font-family: "NunitoSans";
@@ -294,13 +363,32 @@ ul {
   color: #AFAFAF;
   padding: 16px 0;
 }
+@media screen and (min-width: 768px) {
+  .shows__date-container {
+    font-family: "NunitoSans";
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 500;
+    font-size: 16px;
+  }
+}
 .shows__date {
   font-family: "NunitoSans";
-  font-size: 24px;
-  line-height: 32px;
-  font-weight: 700;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 600;
   color: #323232;
   margin-top: -10px;
+  font-size: 18px;
+}
+@media screen and (min-width: 768px) {
+  .shows__date {
+    font-family: "NunitoSans";
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 500;
+    font-size: 16px;
+  }
 }
 .shows__venue-container {
   font-family: "NunitoSans";
@@ -310,14 +398,33 @@ ul {
   color: #AFAFAF;
   padding: 16px 0;
 }
+@media screen and (min-width: 768px) {
+  .shows__venue-container {
+    font-family: "NunitoSans";
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 500;
+    font-size: 16px;
+  }
+}
 .shows__venue {
   font-family: "NunitoSans";
-  font-size: 24px;
-  line-height: 32px;
-  font-weight: 700;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 600;
   font-weight: 400;
   color: #323232;
   margin-top: -10px;
+  font-size: 18px;
+}
+@media screen and (min-width: 768px) {
+  .shows__venue {
+    font-family: "NunitoSans";
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 500;
+    font-size: 16px;
+  }
 }
 .shows__location-container {
   font-family: "NunitoSans";
@@ -327,14 +434,33 @@ ul {
   color: #AFAFAF;
   padding: 16px 0;
 }
+@media screen and (min-width: 768px) {
+  .shows__location-container {
+    font-family: "NunitoSans";
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 500;
+    font-size: 16px;
+  }
+}
 .shows__location {
   font-family: "NunitoSans";
-  font-size: 24px;
-  line-height: 32px;
-  font-weight: 700;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 600;
   font-weight: 400;
   color: #323232;
   margin-top: -10px;
+  font-size: 18px;
+}
+@media screen and (min-width: 768px) {
+  .shows__location {
+    font-family: "NunitoSans";
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 500;
+    font-size: 16px;
+  }
 }
 .shows__button {
   width: 100%;
@@ -345,15 +471,21 @@ ul {
   font-weight: 700;
   color: #FFFFFF;
   text-align: center;
-  padding: 16px;
+  padding: 4px;
   margin: 24px 0;
   border-radius: 10px;
+  font-size: 18px;
+}
+@media screen and (min-width: 768px) {
+  .shows__button {
+    width: 20%;
+  }
 }
 .shows__divider {
   height: 1px;
   color: #E1E1E1;
   width: 120%;
-  margin-top: 6px;
+  margin-top: 4px;
   margin-bottom: 6px;
   padding: 0;
 }
@@ -411,7 +543,7 @@ ul {
   flex-wrap: nowrap;
   width: 42%;
   height: 6vh;
-  margin-left: 16px;
+  margin-left: 8px;
 }
 @media screen and (min-width: 768px) {
   .footer__icon {
