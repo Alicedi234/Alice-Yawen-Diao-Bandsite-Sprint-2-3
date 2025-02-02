@@ -68,6 +68,9 @@ function displayShows(showsdata){
     const buttonEl = document.createElement("button");
     buttonEl.textContent = "BUY TICKETS";
     buttonEl.classList.add("shows__button");
+
+    const dividerEl = document.createElement("hr");
+    dividerEl.classList.add("shows__divider");
     
     showsEl.appendChild(dateContainer);
     showsEl.appendChild(date);
@@ -76,11 +79,11 @@ function displayShows(showsdata){
     showsEl.appendChild(locationContainer);
     showsEl.appendChild(location);
     showsEl.appendChild(buttonEl);
+    showsEl.appendChild(dividerEl);
     
     showsContainer.push(showsEl)
   }
   return showsContainer;
-  console.log(showsContainer);
 }
 
 const showsSection = document.querySelector(".shows");

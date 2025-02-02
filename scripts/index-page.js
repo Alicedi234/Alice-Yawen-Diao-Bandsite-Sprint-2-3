@@ -8,7 +8,7 @@ console.log(image);
 // create an array to contain existing comments.
 const comments = [
   { 
-    name: "Victor pinto", 
+    name: "Victor Pinto", 
     date: "11/02/2023", 
     comment: "This is art. Expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."
   },
@@ -30,27 +30,40 @@ function displayComments(comments){
 
   for(let i =0; i <comments.length; i++){
     const cardEl = document.createElement("article");
-    cardEl.classList.add("main__card")
+    cardEl.classList.add("main__card");
     
     const pic = document.createElement('div');
-    pic.classList.add("main__avatar")
+    pic.classList.add("main__avatar");
     
-    const cardContainer = document.createElement("div");
+    const cardContainer2 = document.createElement("div");
+    cardContainer2.classList.add("main__container2");
+
+    const cardContainer3 = document.createElement("div");
+    cardContainer3.classList.add("main__container3");
     
     const heading = document.createElement("h2");
-    heading.textContent = comments[i].name
+    heading.classList.add("main__container2--heading")
+    heading.textContent = comments[i].name;
     
     const text = document.createElement('p');
     text.textContent = comments[i].comment;
+    text.classList.add("main__container2--text");
+
     const date = document.createElement('p');
     date.textContent = comments[i].date;
-    
-    cardEl.appendChild(pic);//image url
-    cardEl.appendChild(cardContainer);
+    date.classList.add("main__date");
+
+    const divider = document.createElement('hr');
+    divider.classList.add("main__divider");
+
+ 
+    cardContainer2.appendChild(heading);//name
+    cardContainer2.appendChild(text);//comment
+    cardContainer3.appendChild(pic);
+    cardContainer3.appendChild(cardContainer2);
+    cardEl.appendChild(cardContainer3);
     cardEl.appendChild(date);//date
-    cardContainer.appendChild(heading);//name
-    cardContainer.appendChild(text);//comment
-    
+    cardEl.appendChild(divider);
     articles.push(cardEl);
   }
   return articles;
@@ -69,7 +82,12 @@ formEl.addEventListener("submit", function(event){
 
 //check if the form is filled out
    if(!newComment.trim() || !newName.trim()){
-    alert("Please fill out the form");
+     const inputEl = document.querySelector("#name");
+     inputEl.style.border = "2px solid #D22D2D";
+
+     const inputEl2 = document.querySelector("#comment");
+     inputEl2.style.border = "2px solid #D22D2D";
+     alert("Please fill out the form");
     return;
    }
 

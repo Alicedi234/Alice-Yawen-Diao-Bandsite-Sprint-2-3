@@ -97,9 +97,9 @@
 
 
 .banner{
-  background-image: url(../assets/Images/hero-bio.jpg);
+background-image: url(../assets/Images/hero-shows.jpg);
 @include background-style;
-@include size(43vh,100%);
+@include size(35vh,100%);
 color:$primary-color3;
 @include tablet{
 @include size(50vh,100%);
@@ -107,18 +107,25 @@ color:$primary-color3;
 @include desktop{
 @include size(60vh,100%);
 }
-&__image{
-  @include flex(column,center,center,wrap);
+&__content{
+  @include flex(column,flex-start,flex-start,wrap);
   background-color: rgba(50, 50, 50,0.5);
   width:100%;
-  height:43vh;
+  height:35vh;
   @include tablet{
   @include size(50vh,100%)
   }
   @include desktop{
     @include size(60vh,100%)
   }
-   &--title{
+  &--title1{
+    margin:0;
+    padding-left:16px;
+    @include mobile-pageheader;
+    margin-top:-56px;
+
+  }
+   &--title2{
    margin:0;
    opacity: 1;
    color:white;
@@ -127,7 +134,7 @@ color:$primary-color3;
    width:90%;
    padding-left:16px;
    padding-top:54px;
-   @include mobile-pageheader;
+   @include mobile-subheader;
    @include tablet{
     @include desktop-pageheader;
    }
@@ -135,9 +142,13 @@ color:$primary-color3;
     @include desktop-pageheader;
    }
   }
+  &--soundcloud{
+    width:100%;
+    text-align:center;
+    margin-top:16px;
 }
 }
-
+}
 //shows
 .shows{
   width:100%;
@@ -153,16 +164,17 @@ color:$primary-color3;
     width:100%;
   }
   &__date-container{
-    @include mobile-bodycopy;
+    @include mobile-subheader;
     color: $primary-color2;
     padding:16px 0;
   }
   &__date{
     @include mobile-sectionheader;
     color:$primary-color1;
+    margin-top:-10px;
   }
   &__venue-container{
-    @include mobile-bodycopy;
+    @include mobile-subheader;
     color: $primary-color2;
     padding:16px 0;
   }
@@ -170,9 +182,10 @@ color:$primary-color3;
     @include mobile-sectionheader;
     font-weight:400;
     color:$primary-color1;
+    margin-top:-10px;
   }
   &__location-container{
-    @include mobile-bodycopy;
+    @include mobile-subheader;
     color: $primary-color2;
     padding:16px 0;
   }
@@ -180,6 +193,7 @@ color:$primary-color3;
     @include mobile-sectionheader;
     font-weight:400;
     color:$primary-color1;
+    margin-top:-10px;
   }
   &__button{
     width:100%;
@@ -190,6 +204,14 @@ color:$primary-color3;
     padding:16px;
     margin: 24px 0;
     border-radius: 10px;
+  }
+  &__divider{
+    height:1px;
+    color:$secondary-color2;
+    width:120%;
+    margin-top:6px;
+    margin-bottom:6px;
+    padding:0;
   }
 } 
 
