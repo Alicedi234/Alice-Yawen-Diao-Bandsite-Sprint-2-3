@@ -56,7 +56,7 @@ function displayComments(comments){
     const divider = document.createElement('hr');
     divider.classList.add("main__divider");
 
- 
+    cardContainer2.appendChild(divider);//name
     cardContainer2.appendChild(heading);//name
     cardContainer2.appendChild(text);//comment
     cardContainer3.appendChild(pic);

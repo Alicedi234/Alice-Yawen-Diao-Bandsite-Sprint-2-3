@@ -1,0 +1,3 @@
+#igore scss map files
+*.css.map
+assets/copydesk
