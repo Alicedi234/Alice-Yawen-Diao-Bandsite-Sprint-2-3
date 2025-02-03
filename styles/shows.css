@@ -41,12 +41,12 @@ ul {
 }
 @media screen and (min-width: 768px) {
   .header {
-    height: 13vh;
+    height: 8vh;
   }
 }
 @media screen and (min-width: 768px) and (min-width: 1280px) {
   .header {
-    height: 13vh;
+    height: 8vh;
   }
 }
 .header__nav {
@@ -55,7 +55,7 @@ ul {
 }
 @media screen and (min-width: 768px) {
   .header__nav {
-    height: 13vh;
+    height: 8vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -65,7 +65,7 @@ ul {
 }
 @media screen and (min-width: 1280px) {
   .header__nav {
-    height: 13vh;
+    height: 8vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -92,12 +92,12 @@ ul {
     flex-wrap: wrap;
     margin-left: 48px;
     padding: 0;
-    height: 13vh;
+    height: 8vh;
   }
 }
 @media screen and (min-width: 1280px) {
   .header__nav--container {
-    height: 13vh;
+    height: 8vh;
   }
 }
 .header__nav--logo {
@@ -126,13 +126,13 @@ ul {
     flex-wrap: wrap;
     width: 30%;
     margin-left: -40%;
-    height: 13vh;
+    height: 8vh;
   }
 }
 @media screen and (min-width: 1280px) {
   .header__menu {
     width: 25%;
-    height: 13vh;
+    height: 8vh;
   }
 }
 .header__menu--link {
@@ -170,7 +170,7 @@ ul {
 }
 @media screen and (min-width: 768px) {
   .link__highlight--container {
-    height: 13vh;
+    height: 8vh;
     display: flex;
     flex-direction: row;
     justify-content: center;

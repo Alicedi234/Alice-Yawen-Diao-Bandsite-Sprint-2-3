@@ -8,20 +8,20 @@
   width:100%;
   @include flex(row,center,center,nowrap);
   @include tablet{
-    height:13vh;
+    height:8vh;
     @include desktop{
-      height:13vh;
+      height:8vh;
     }
   }
   &__nav{
     background-color:$primary-color1;
     width:100%;
     @include tablet{
-      height:13vh;
+      height:8vh;
       @include flex(row,space-between,center,wrap);
     }
     @include desktop{
-      height:13vh;
+      height:8vh;
       @include flex(row,space-between,center,wrap);
     }
     &--container{
@@ -33,10 +33,10 @@
         @include flex(row,flex-start,center,wrap);
         margin-left:48px;
         padding:0;
-        height:13vh;
+        height:8vh;
       }
       @include desktop{
-        height:13vh;
+        height:8vh;
       }
     }
     &--logo{
@@ -56,11 +56,11 @@
       @include flex(row,space-around,center,wrap);
       width:30%;
       margin-left:-40%;
-      height:13vh;
+      height:8vh;
     }
     @include desktop{
       width:25%;
-      height:13vh;
+      height:8vh;
     }
     &--link{
       padding-bottom: 10px;
@@ -84,7 +84,7 @@
   margin:0;
   width:50%;
   @include tablet{
-    height:13vh;
+    height:8vh;
     @include flex(row,center,center,nowrap)
   }
 

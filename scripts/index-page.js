@@ -24,6 +24,27 @@ const comments = [
   }
 ];
 
+// I tried it ... didn't work :(
+
+// function timeAgo(dateString) {
+//   const now = new Date().toISOString();
+//   const past = new Date(dateString);
+//   const diffInSeconds = Math.floor((now - past) / 1000);
+
+//   if (diffInSeconds < 60) {
+//       return `${diffInSeconds} seconds ago`;
+//   } else if (diffInSeconds < 3600) {
+//       return `${Math.floor(diffInSeconds / 60)} minutes ago`;
+//   } else if (diffInSeconds < 86400) {
+//       return `${Math.floor(diffInSeconds / 3600)} hours ago`;
+//   } else if (diffInSeconds < 604800) {
+//       return `${Math.floor(diffInSeconds / 86400)} days ago`;
+//   } else{
+//     return past.toLocaleDateString();
+//   }
+// }
+
+
 // diplay function
 function displayComments(comments){
   const articles = [];
@@ -50,20 +71,23 @@ function displayComments(comments){
     text.classList.add("main__container2--text");
 
     const date = document.createElement('p');
-    date.textContent = comments[i].date;
     date.classList.add("main__date");
+    date.textContent =comments[i].date;
+    
+    // date.textContent =timeAgo(comments[i].date);
+    
 
-    const divider = document.createElement('hr');
-    divider.classList.add("main__divider");
+    const dividerBottom = document.createElement('hr');
+    dividerBottom.classList.add("main__divider");
 
-    cardContainer2.appendChild(divider);//name
     cardContainer2.appendChild(heading);//name
     cardContainer2.appendChild(text);//comment
     cardContainer3.appendChild(pic);
     cardContainer3.appendChild(cardContainer2);
     cardEl.appendChild(cardContainer3);
     cardEl.appendChild(date);//date
-    cardEl.appendChild(divider);
+    cardEl.appendChild(dividerBottom);
+  
     articles.push(cardEl);
   }
   return articles;
@@ -97,7 +121,7 @@ formEl.addEventListener("submit", function(event){
   const commentData = {
     name:newName, 
     date: new Date().toLocaleDateString(),
-    comment:newComment
+    comment:newComment,
   };
 
   console.log("commentData", commentData);
