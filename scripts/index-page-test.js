@@ -5,29 +5,6 @@ const container = document.querySelector(".main__image");
 container.appendChild(image);
 console.log(image);
 
-// create a new variable to store the constant APikey
-const API_KEY = "64eebdbe-732a-4d0c-80e7-c53f51613e18";
-
-// create an instance of BandSiteApi
-const api = new BandSiteApi(API_KEY);
-console.log("new instance", api);
-
-console.log(await api.getData("comments"));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // create an array to contain existing comments.
 
 
@@ -68,11 +45,12 @@ const comments = [
 //     return past.toLocaleDateString();
 //   }
 // }
+const myComment = document.querySelector("#comments-list");
 
 
 // diplay function
 function displayComments(comments){
-  const articles = [];
+  // const articles = [];
 
   for(let i =0; i <comments.length; i++){
     const cardEl = document.createElement("article");
@@ -112,15 +90,16 @@ function displayComments(comments){
     cardEl.appendChild(cardContainer3);
     cardEl.appendChild(date);//date
     cardEl.appendChild(dividerBottom);
-  
-    articles.push(cardEl);
+    
+    myComment.appendChild(cardEl);
+    
   }
-  return articles;
+  return myComment;
   }
 
 // submit form
 const formEl = document.querySelector(".main__form");
-const myComment = document.querySelector("#comments-list");
+// const myComment = document.querySelector("#comments-list");
 
 formEl.addEventListener("submit", function(event){
   event.preventDefault();
