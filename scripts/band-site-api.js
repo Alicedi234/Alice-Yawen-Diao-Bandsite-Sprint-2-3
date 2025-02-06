@@ -1,32 +1,31 @@
-// form submit
+// const image =document.createElement("img");
+// image.src= "./assets/Images/Mohan-muruge.jpg";
+// image.classList = "main__image--item";
+// const container = document.querySelector(".main__image");
+// container.appendChild(image);
+// console.log(image);
 
 
 
 
 
+// async function postComment(commentData){
+  // const url =`${this.baseUrl}${path}?api_key=${this.apiKey}`;
+  // try{
+    // // const reponsePost = await axios.post("https://unit-2-project-api-25c1595833b2.herokuapp.com/comments?api_key=64eebdbe-732a-4d0c-80e7-c53f51613e18",
+    // commentData, {Headers: {"content-Type":"application/json"}});
+    // console.log(reponsePost.data);
+    // return reponsePost.data;
+      // 
+  // }catch(error){
+    // console.log(error);
+  // 
+// }
+// }
 
 
 
-async function postComment(){
-  const newPost = {
-    "name": "alice",
-    "comment":"this is a great show",
-  }
-  try{
-    const reponsePost = await axios.post("https://unit-2-project-api-25c1595833b2.herokuapp.com/comments?api_key=64eebdbe-732a-4d0c-80e7-c53f51613e18",
-      newPost, {Headers: {"content-Type":"application/json"}});
-      console.log(reponsePost.data);
-      return reponsePost.data;
-      
-  }catch(error){
-    console.log(error);
-  }
-}
 //reset data
-
-// postComment();
-
-
 
 
 
@@ -37,6 +36,19 @@ class BandSiteApi{
     this.baseUrl = "https://unit-2-project-api-25c1595833b2.herokuapp.com/";
     this.apiKey = apiKey;
   }
+  // post comment
+  async postComment(commentData){
+    const url =`${this.baseUrl}comments?api_key=${this.apiKey}`;
+    try{
+      const responsePost = await axios.post(url, commentData, {headers:{"Content-Type":"application/json"}
+      });
+      console.log(responsePost.data);
+      return responsePost.data;
+    }catch(error){
+      console.log(error)
+    }
+  }
+// get comments
 
 async getData(path){
   const url =`${this.baseUrl}${path}?api_key=${this.apiKey}`;
@@ -53,15 +65,49 @@ console.log(error);
   }
 }
 
-
 const apiKey = "64eebdbe-732a-4d0c-80e7-c53f51613e18";
 const api = new BandSiteApi(apiKey);
 
+// form submit
 const container = document.querySelector("#comments-list");
+const formEl = document.querySelector(".main__form");
+
+formEl.addEventListener("submit", async function(event){
+  event.preventDefault();
+  const  NewName = event.target.name.value;
+  const NewComment = event.target.comment.value;
+
+//check if the input is valid
+  if(!NewComment.trim() || !NewName.trim()){
+    const inputEl = document.querySelector("#name");
+    inputEl.style.border = "2px solid #D22D2D";
+    
+    const inputEl2 = document.querySelector("#comment");
+    inputEl2.style.border = "2px solid #D22D2D";
+    alert("Please fill out the form");
+   return;
+  }
+  console.log("NewName", NewName);
+  console.log("NewComment", NewComment);
+
+  const commentData = {
+    name: NewName,
+    comment: NewComment,
+  }
+  const responseData = await api.postComment(commentData);
+  console.log(responseData);
+  
+  return await DisplayComments();
+})
+
+
+
+
 
 
 async function DisplayComments(){
   const dataGot = await api.getData("comments");
+  container.innerHTML = "";
   console.log(dataGot);
   // const articles = [];
   for (let i = 0; i < dataGot.nameSingle.length; i++){
@@ -104,7 +150,6 @@ async function DisplayComments(){
     container.appendChild(cardEl);
   }
   console.log(container);
-  
   return container;
 }
 
@@ -126,7 +171,6 @@ DisplayComments();
 
 
     
-// date.textContent =timeAgo(comments[i].date);
     
 
 
@@ -136,9 +180,7 @@ DisplayComments();
 
 
 
-// const new url = "https://unit-2-project-api-25c1595833b2.herokuapp.com/comments?api_key=64eebdbe-732a-4d0c-80e7-c53f51613e18";
 
 
 
 
-// // getComments("https://unit-2-project-api-25c1595833b2.herokuapp.com/showdates?api_key=64eebdbe-732a-4d0c-80e7-c53f51613e18");

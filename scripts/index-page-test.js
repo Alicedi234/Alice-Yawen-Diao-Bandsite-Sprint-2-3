@@ -45,12 +45,11 @@ const comments = [
 //     return past.toLocaleDateString();
 //   }
 // }
-const myComment = document.querySelector("#comments-list");
 
 
 // diplay function
 function displayComments(comments){
-  // const articles = [];
+  const articles = [];
 
   for(let i =0; i <comments.length; i++){
     const cardEl = document.createElement("article");
@@ -67,7 +66,7 @@ function displayComments(comments){
     
     const heading = document.createElement("h2");
     heading.classList.add("main__container2--heading")
-    heading.textContent = comments[i].name;
+    heading.textContent = dataGot.nameSingle[i]
     
     const text = document.createElement('p');
     text.textContent = comments[i].comment;
@@ -90,16 +89,15 @@ function displayComments(comments){
     cardEl.appendChild(cardContainer3);
     cardEl.appendChild(date);//date
     cardEl.appendChild(dividerBottom);
-    
-    myComment.appendChild(cardEl);
-    
+  
+    articles.push(cardEl);
   }
-  return myComment;
+  return articles;
   }
 
 // submit form
 const formEl = document.querySelector(".main__form");
-// const myComment = document.querySelector("#comments-list");
+const myComment = document.querySelector("#comments-list");
 
 formEl.addEventListener("submit", function(event){
   event.preventDefault();
