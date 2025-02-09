@@ -5,8 +5,7 @@ const containerImage = document.querySelector(".main__image");
 containerImage.appendChild(image);
 console.log(containerImage);
 
-
-import BandSiteApi from "./band-site-api.js"
+import BandSiteApi from "./band-site-api.js";
 
 const apiKey = "64eebdbe-732a-4d0c-80e7-c53f51613e18";
 const api = new BandSiteApi(apiKey);
@@ -44,7 +43,7 @@ formEl.addEventListener("submit", async function(event){
 })
 
 async function DisplayComments(){
-  const dataGot = await api.getComments("comments");
+  const dataGot = await api.getComments();
   container.innerHTML = "";
   console.log(dataGot);
   // const articles = [];

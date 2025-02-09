@@ -16,8 +16,8 @@ class BandSiteApi{
     }
   }
 // get comments
-async getComments(path){
-  const url =`${this.baseUrl}${path}?api_key=${this.apiKey}`;
+async getComments(){
+  const url =`${this.baseUrl}comments?api_key=${this.apiKey}`;
   try{
     const response = await axios.get(url);
     const nameSingle = response.data.map(item => item.name);
@@ -30,17 +30,8 @@ async getComments(path){
 console.log(error);
   }
   }
-
-// get shows
-async getShows(){
-  const url = `${this.baseUrl}showdates?api_key=${this.apiKey}`;
 }
 
-  
-}
 
 export default BandSiteApi;
-
-
-
 
