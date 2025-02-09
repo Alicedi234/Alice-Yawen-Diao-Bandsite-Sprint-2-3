@@ -28,8 +28,6 @@ formEl.addEventListener("submit", async function(event){
     alert("Please fill out the form");
    return;
   }
-  console.log("NewName", NewName);
-  console.log("NewComment", NewComment);
 
   const commentData = {
     name: NewName,
@@ -44,9 +42,7 @@ formEl.addEventListener("submit", async function(event){
 
 async function DisplayComments(){
   const dataGot = await api.getComments();
-  container.innerHTML = "";
-  console.log(dataGot);
-  
+  container.innerHTML = "";  
   for (let i = ((dataGot.nameSingle.length) - 1); i >= 0; i--){
     const cardEl = document.createElement("article");
     cardEl.classList.add("main__card");
@@ -75,15 +71,14 @@ async function DisplayComments(){
     const dividerBottom = document.createElement('hr');
     dividerBottom.classList.add("main__divider");
     
-    cardContainer2.appendChild(headingName);//name
-    cardContainer2.appendChild(textComment);//comment
+    cardContainer2.appendChild(headingName);
+    cardContainer2.appendChild(textComment);
     cardContainer3.appendChild(pic);
     cardContainer3.appendChild(cardContainer2);
     cardEl.appendChild(cardContainer3);
-    cardEl.appendChild(date);//date
+    cardEl.appendChild(date);
     cardEl.appendChild(dividerBottom);
     
-    // articles.push(cardEl);
     container.appendChild(cardEl);
   }
   console.log(container);

@@ -10,7 +10,7 @@ class shows{
       const date = response.data.map(item =>item.date);// new array
       const venue = response.data.map(item => item.place);
       const location = response.data.map(item => item.location);
-      const dataGot = {date, venue, location}; //将返回的6个数组包裹在一个对象中，进行返回
+      const dataGot = {date, venue, location}; //put 6 arrays in 1 object
       return dataGot;
     }
     catch(error){
@@ -22,18 +22,10 @@ class shows{
   const apiKey = "64eebdbe-732a-4d0c-80e7-c53f51613e18";
   const api = new shows(apiKey);
 
-  // async function dataTest(){
-    // const dataGet = await api.getShows();
-    // console.log(dataGet);
-    // return dataGet;
-  // }
-  // 
-// dataTest();
-
   const showsBox = document.querySelector(".shows__box");
 
  async function displayShows(){
-    const dataFinal = await api.getShows(); //调用类来接受数据
+    const dataFinal = await api.getShows(); // call class
     
     for (let i =0; i < 5; i++){
       
