@@ -46,7 +46,7 @@ async function DisplayComments(){
   const dataGot = await api.getComments();
   container.innerHTML = "";
   console.log(dataGot);
-  // const articles = [];
+  
   for (let i = ((dataGot.nameSingle.length) - 1); i >= 0; i--){
     const cardEl = document.createElement("article");
     cardEl.classList.add("main__card");
